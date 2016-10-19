@@ -137,39 +137,26 @@ namespace Routinely
             runPopup.Popup.PlacementTarget = RunButton;
             runPopup.RunClick += RunHandler;
 
-            HotkeyManager.Current.AddOrReplace("PauseHotkey", Key.Z, ModifierKeys.Control | ModifierKeys.Alt , HotKeyHandler);   
+            HotkeyManager.Current.AddOrReplace("StopHotkey", Key.X, ModifierKeys.Control | ModifierKeys.Alt , StopHotkeyHandler);
+            HotkeyManager.Current.AddOrReplace("ResumeHotkey", Key.Z, ModifierKeys.Control | ModifierKeys.Alt, ResumeHokeyHandler);
         }
 
-        private void HotKeyHandler(object sender, HotkeyEventArgs e)
+        private void StopHotkeyHandler(object sender, HotkeyEventArgs e)
         {
             OverlayWindow.IsPaused = false;
             cancelRoutineTask.Cancel();
         }
 
+        private void ResumeHokeyHandler(object sender, HotkeyEventArgs e)
+        {
+            if(OverlayWindow.IsPaused == true)
+            {
+                OverlayWindow.IsPaused = false;
+            }
+        }
+
         private void VisibilityHandler()
         {
-            //if(Permissions.CanDock == true)
-            //{
-            //    DockLeftButton.Visibility = Visibility.Visible;
-            //    DockRightButton.Visibility = Visibility.Visible;
-            //    DockTopButton.Visibility = Visibility.Visible;
-            //}
-            //else
-            //{
-            //    DockLeftButton.Visibility = Visibility.Collapsed;
-            //    DockRightButton.Visibility = Visibility.Collapsed;
-            //    DockTopButton.Visibility = Visibility.Collapsed;
-            //}
-
-            //if(Permissions.CanUndock == true)
-            //{
-            //    FloatButton.Visibility = Visibility.Visible;
-            //}
-            //else
-            //{
-            //    FloatButton.Visibility = Visibility.Collapsed;
-            //}
-
             if(Permissions.CanPin == true)
             {
                 PinButton.Visibility = Visibility.Visible;
@@ -189,41 +176,11 @@ namespace Routinely
             }
         }
 
-        //private void Float_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    Orientation = System.Windows.Controls.Orientation.Horizontal;
-
-        //    Float();
-        //    VisibilityHandler();
-        //}
-
-        //private void Hide_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    Collapse();
-        //}
-
-        //private void Right_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    Dock(DockingEdge.Right);
-        //    VisibilityHandler();
-        //}
-
-        //private void Left_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    Left();
-        //}
-
         private new void Left()
         {
             Dock(DockingEdge.Left);
             VisibilityHandler();
         }
-
-        //private void Top_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    Dock(DockingEdge.Top);
-        //    VisibilityHandler();
-        //}
 
         private void Pin_OnClick(object sender, RoutedEventArgs e)
         {

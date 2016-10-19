@@ -41,27 +41,9 @@
                     <Setter Property="Background" Value="Gray"/>
                 </Trigger>
             </Style.Triggers>
-            <!--<Style.Triggers>
-                -->
-            <!-- http://stackoverflow.com/questions/4564709/wpf-on-mouse-hover-on-a-particular-control-increase-its-size-and-overlap-on-th -->
-            <!--
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Grid.ZIndex" Value="1"/>
-                    <Setter Property="Background" Value="Red"/>
-                    <Setter Property="RenderTransform">
-                        <Setter.Value>
-                            <ScaleTransform ScaleX="1.0125" ScaleY="1.1"/>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-            </Style.Triggers>-->
         </Style>
     </Window.Resources>
     <WrapPanel x:Name="DockSettings" Orientation="{Binding Orientation}">
-        <!--<Button x:Name="DockLeftButton" Click="Left_OnClick" IsEnabled="{Binding Permissions.CanDock}" >Left</Button>
-        <Button x:Name="DockRightButton" Click="Right_OnClick" IsEnabled="{Binding Permissions.CanDock}" >Right</Button>
-        <Button x:Name="DockTopButton" Click="Top_OnClick" IsEnabled="{Binding Permissions.CanDock}" >Top</Button>
-        <Button x:Name="FloatButton" Click="Float_OnClick" IsEnabled="{Binding Permissions.CanUndock}" >Float</Button>-->
         <Button x:Name="PinButton" Click="Pin_OnClick" IsEnabled="{Binding Permissions.CanPin}" ToolTip="Pin toolbar to screen">Pin</Button>
         <Button x:Name="UnpinButton" Click="Unpin_OnClick" IsEnabled="{Binding Permissions.CanUnpin}" ToolTip="Unpin toolbar from scren">Unpin</Button>
         <Button x:Name="ShowButton" Click="Show_OnClick" ToolTip="Display current routine">Show</Button>
@@ -71,8 +53,8 @@
         <Button x:Name="DragButton" Click="Drag_OnClick" ToolTip="Add Drag to routine">Drag</Button>
         <Button x:Name="SaveButton" Click="Save_OnClick" ToolTip="Save current routine">Save</Button>
         <Button x:Name="LoadButton" Click="Load_OnClick" ToolTip="Load saved routine">Load</Button>
-        <Button x:Name="RunButton" Click="Run_OnClick" ToolTip="Run current routine (CTRL+ALT+Z to stop)">Run</Button>
-        <Button x:Name="ResumeButton" Click="Resume_OnClick" FontSize="9" ToolTip="Resume current routine">Resume</Button>
+        <Button x:Name="RunButton" Click="Run_OnClick" ToolTip="Run current routine (CTRL+ALT+X to stop)">Run</Button>
+        <Button x:Name="ResumeButton" Click="Resume_OnClick" FontSize="9" ToolTip="Resume current routine (CTRL+ALT+Z to resume)">Resume</Button>
         <Button x:Name="StopButton" Click="Stop_OnClick" ToolTip="Stop current routine">Stop</Button>
         <Button x:Name="ExitButton" Click="Exit_OnClick" ToolTip="Exit Routinely">Exit</Button>
     </WrapPanel>
