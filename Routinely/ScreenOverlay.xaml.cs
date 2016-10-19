@@ -5,19 +5,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Shapes;
 using System.Threading;
-using System.Diagnostics;
-using System.Windows.Data;
-using System.Collections.ObjectModel;
 using Routinely.ClickModels;
 using System.Xml.Linq;
 using Microsoft.Win32;
 using System.IO;
 using WindowsInput;
-using System.Threading.Tasks;
 using System.Windows.Threading;
-using Canyonix.UI.Windows;
 
 namespace Routinely
 {
