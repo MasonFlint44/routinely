@@ -166,18 +166,6 @@ namespace Routinely
             }
         }
 
-        //private void Control_MouseLeave(object sender, RoutedEventArgs e)
-        //{
-        //    MinusButton.Background = Brushes.Transparent;
-        //    CounterTextBox.Background = Brushes.Transparent;
-        //    PlusButton.Background = Brushes.Transparent;
-        //}
-
-        //private void Control_MouseEnter(object sender, RoutedEventArgs e)
-        //{
-        //    CounterTextBox.Background = Brushes.Gray;
-        //}
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

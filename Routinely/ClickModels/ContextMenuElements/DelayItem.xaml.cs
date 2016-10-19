@@ -19,7 +19,7 @@ namespace Routinely.ClickModels.ContextMenuElements
     /// <summary>
     /// Interaction logic for DelayButton.xaml
     /// </summary>
-    public partial class DelayItem : UserControl//, INotifyPropertyChanged
+    public partial class DelayItem : UserControl
     {
         private bool _isIndefinite;
 
@@ -32,13 +32,11 @@ namespace Routinely.ClickModels.ContextMenuElements
                 if(value == true)
                 {
                     CounterBox.TextBoxSelected = false;
-                    //CounterBox.CounterTextBox.Background = Brushes.Transparent;
                     IndefiniteButton.Background = CounterBox.HighlightColor;
                 }
                 else
                 {
                     CounterBox.TextBoxSelected = true;
-                    //CounterBox.CounterTextBox.Background = CounterBox.HighlightColor;
                     IndefiniteButton.Background = Brushes.Transparent;
                 }
 
@@ -70,15 +68,11 @@ namespace Routinely.ClickModels.ContextMenuElements
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             IsIndefinite = false;
-            //IndefiniteButton.Background = Brushes.Transparent;
-            //CounterBox.CounterTextBox.Background = CounterBox.HighlightColor;
         }
 
         private void IndefiniteButton_Click(object sender, RoutedEventArgs e)
         {
             IsIndefinite = true;
-            //CounterBox.CounterTextBox.Background = Brushes.Transparent;
-            //IndefiniteButton.Background = CounterBox.HighlightColor;
         }
 
         private void IndefiniteButton_MouseEnter(object sender, RoutedEventArgs e)
@@ -120,74 +114,5 @@ namespace Routinely.ClickModels.ContextMenuElements
                 IndefiniteButton.Background = Brushes.Transparent;
             }
         }
-
-        //private void Button_MouseEnter(object sender, MouseEventArgs e)
-        //{
-        //    ((Control)sender).Background = HighlightColor;
-        //}
-
-        //private void Button_MouseLeave(object sender, MouseEventArgs e)
-        //{
-        //    ((Control)sender).Background = Brushes.Transparent;
-
-        //    if (IsIndefinite == true)
-        //    {
-        //        IndefiniteButton.Background = HighlightColor;
-        //        DelayTextBox.Background = Brushes.Transparent;
-        //    }
-        //    else
-        //    {
-        //        IndefiniteButton.Background = Brushes.Transparent;
-        //        DelayTextBox.Background = HighlightColor;
-        //    }
-        //}
-
-        //private void Control_MouseLeave(object sender, RoutedEventArgs e)
-        //{
-        //    MinusButton.Background = Brushes.Transparent;
-        //    PlusButton.Background = Brushes.Transparent;
-
-        //    if (IsIndefinite == true)
-        //    {
-        //        IndefiniteButton.Background = Brushes.Gray;
-        //        DelayTextBox.Background = Brushes.Transparent;
-        //    }
-        //    else
-        //    {
-        //        IndefiniteButton.Background = Brushes.Transparent;
-        //        DelayTextBox.Background = Brushes.Gray;
-        //    }
-        //}
-
-        //private void Control_MouseEnter(object sender, RoutedEventArgs e)
-        //{
-        //    if (IsIndefinite == true)
-        //    {
-        //        IndefiniteButton.Background = HighlightColor;
-        //        DelayTextBox.Background = Brushes.Transparent;
-        //    }
-        //    else
-        //    {
-        //        IndefiniteButton.Background = Brushes.Transparent;
-        //        DelayTextBox.Background = HighlightColor;
-        //    }
-        //}
-
-        //private void DelayTextBox_Click(object sender, RoutedEventArgs e)
-        //{
-        //    IsIndefinite = false;
-        //    DelayTextBox.Background = HighlightColor;
-        //    IndefiniteButton.Background = Brushes.Transparent;
-        //}
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //private void OnPropertyChanged(string propertyName)
-        //{
-        //    if (PropertyChanged != null)
-        //    {
-        //        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        //    }
-        //}
     }
 }

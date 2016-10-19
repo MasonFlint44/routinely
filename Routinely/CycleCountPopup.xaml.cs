@@ -29,27 +29,6 @@ namespace Routinely
             InitializeComponent();
 
             CounterBox.DefaultValue = 1;
-
-            //Stole the counter part from a DelayItem
-            //delayItem = new DelayItem();
-            //delayItem.HighlightColor = Brushes.Gray;
-
-            //((StackPanel)delayItem.MinusButton.Parent).Children.Remove(delayItem.MinusButton);
-            //((StackPanel)delayItem.DelayTextBox.Parent).Children.Remove(delayItem.DelayTextBox);
-            //((StackPanel)delayItem.PlusButton.Parent).Children.Remove(delayItem.PlusButton);
-            //delayItem.MinusButton.BorderThickness = new Thickness(1);
-            //delayItem.PlusButton.BorderThickness = new Thickness(1);
-            //delayItem.MinusButton.Width = 30;
-            //delayItem.PlusButton.Width = 30;
-            //delayItem.DelayTextBox.BorderThickness = new Thickness(1);
-            //delayItem.MinusButton.Interval = 33;
-            //delayItem.PlusButton.Interval = 33;
-            //delayItem.MinusButton.ToolTip = "Decrease number of cycles";
-            //delayItem.PlusButton.ToolTip = "Increase number of cycles";
-
-            //StackPanel.Children.Add(delayItem.MinusButton);
-            //StackPanel.Children.Add(delayItem.DelayTextBox);
-            //StackPanel.Children.Add(delayItem.PlusButton);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
