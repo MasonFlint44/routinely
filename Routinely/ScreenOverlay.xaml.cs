@@ -214,6 +214,8 @@ namespace Routinely
             if(openDialog.ShowDialog() == true)
             {
                 OverlayCanvas.Children.Clear();
+                pointCount = 0;
+
                 XDocument routine = XDocument.Load(openDialog.FileName);
 
                 foreach(XElement element in routine.Root.Elements())
