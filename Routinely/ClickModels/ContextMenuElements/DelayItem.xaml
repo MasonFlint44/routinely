@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Routinely.ClickModels.ContextMenuElements.DelayItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Routinely"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="DelayIndefiniteButton" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Width" Value="94"/>
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="BorderBrush" Value="DarkSlateGray"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border 
+                                Background="{TemplateBinding Background}" 
+                                Height="{TemplateBinding Height}" 
+                                Width="{TemplateBinding Width}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                CornerRadius="0,0,5,5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="DimGray"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Width="94" Height="75" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="Set delay after this click occurs">
+        <StackPanel>
+            <Label HorizontalContentAlignment="Center" Foreground="White" Background="Transparent">Delay</Label>
+            <local:CounterBox x:Name="CounterBox"/>
+            <Button Name="IndefiniteButton" Style="{StaticResource DelayIndefiniteButton}" ToolTip="Wait indefinitely until resumed" Click="IndefiniteButton_Click">Indefinite</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

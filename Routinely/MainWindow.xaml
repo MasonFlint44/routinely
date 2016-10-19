@@ -1,0 +1,79 @@
+﻿<src:DockWindow x:Class="Routinely.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Canyonix.UI.Windows;assembly=Canyonix.UI.Windows"
+        Height="170" 
+        Width="350" 
+        ResizeMode="CanResize"  
+        Background="Transparent"
+        AnimationDuration="500"
+        MouseLapseDuration="2000"
+        CollapsedWidth="10"
+        Title="Routinely"
+        ShowInTaskbar="False"
+        AllowsTransparency="True">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Background" Value="SlateGray"/>
+            <Setter Property="BorderBrush" Value="DarkSlateGray"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <!--<Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Gray"/>
+                </Trigger>
+            </Style.Triggers>
+            <!--<Style.Triggers>
+                -->
+            <!-- http://stackoverflow.com/questions/4564709/wpf-on-mouse-hover-on-a-particular-control-increase-its-size-and-overlap-on-th -->
+            <!--
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Grid.ZIndex" Value="1"/>
+                    <Setter Property="Background" Value="Red"/>
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.0125" ScaleY="1.1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>-->
+        </Style>
+    </Window.Resources>
+    <WrapPanel x:Name="DockSettings" Orientation="{Binding Orientation}">
+        <!--<Button x:Name="DockLeftButton" Click="Left_OnClick" IsEnabled="{Binding Permissions.CanDock}" >Left</Button>
+        <Button x:Name="DockRightButton" Click="Right_OnClick" IsEnabled="{Binding Permissions.CanDock}" >Right</Button>
+        <Button x:Name="DockTopButton" Click="Top_OnClick" IsEnabled="{Binding Permissions.CanDock}" >Top</Button>
+        <Button x:Name="FloatButton" Click="Float_OnClick" IsEnabled="{Binding Permissions.CanUndock}" >Float</Button>-->
+        <Button x:Name="PinButton" Click="Pin_OnClick" IsEnabled="{Binding Permissions.CanPin}" ToolTip="Pin toolbar to screen">Pin</Button>
+        <Button x:Name="UnpinButton" Click="Unpin_OnClick" IsEnabled="{Binding Permissions.CanUnpin}" ToolTip="Unpin toolbar from scren">Unpin</Button>
+        <Button x:Name="ShowButton" Click="Show_OnClick" ToolTip="Display current routine">Show</Button>
+        <Button x:Name="HideButton" Click="Hide_OnClick" ToolTip="Hide current routine">Hide</Button>
+        <Button x:Name="AddClickButton" Click="AddClick_OnClick" ToolTip="Add Click to routine">Click</Button>
+        <Button x:Name="TextButton" Click="Text_OnClick" ToolTip="Add TextClick to routine">Text</Button>
+        <Button x:Name="DragButton" Click="Drag_OnClick" ToolTip="Add Drag to routine">Drag</Button>
+        <Button x:Name="SaveButton" Click="Save_OnClick" ToolTip="Save current routine">Save</Button>
+        <Button x:Name="LoadButton" Click="Load_OnClick" ToolTip="Load saved routine">Load</Button>
+        <Button x:Name="RunButton" Click="Run_OnClick" ToolTip="Run current routine (CTRL+ALT+Z to stop)">Run</Button>
+        <Button x:Name="ResumeButton" Click="Resume_OnClick" FontSize="9" ToolTip="Resume current routine">Resume</Button>
+        <Button x:Name="StopButton" Click="Stop_OnClick" ToolTip="Stop current routine">Stop</Button>
+        <Button x:Name="ExitButton" Click="Exit_OnClick" ToolTip="Exit Routinely">Exit</Button>
+    </WrapPanel>
+</src:DockWindow>
