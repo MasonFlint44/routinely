@@ -21,7 +21,6 @@
             <Setter Property="BorderBrush" Value="DarkSlateGray"/>
             <Setter Property="BorderThickness" Value="3"/>
             <Setter Property="Foreground" Value="White"/>
-            <!--<Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>-->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -54,8 +53,8 @@
         <Button x:Name="SaveButton" Click="Save_OnClick" ToolTip="Save current routine">Save</Button>
         <Button x:Name="LoadButton" Click="Load_OnClick" ToolTip="Load saved routine">Load</Button>
         <Button x:Name="RunButton" Click="Run_OnClick" ToolTip="Run current routine (CTRL+ALT+X to stop)">Run</Button>
-        <Button x:Name="ResumeButton" Click="Resume_OnClick" FontSize="9" ToolTip="Resume current routine (CTRL+ALT+Z to resume)">Resume</Button>
-        <Button x:Name="StopButton" Click="Stop_OnClick" ToolTip="Stop current routine">Stop</Button>
+        <Button x:Name="ResumeButton" Click="Resume_OnClick" FontSize="9" ToolTip="Resume current routine (CTRL+ALT+Z)">Resume</Button>
+        <Button x:Name="StopButton" Click="Stop_OnClick" ToolTip="Stop current routine (CTRL+ALT+X)">Stop</Button>
         <Button x:Name="ExitButton" Click="Exit_OnClick" ToolTip="Exit Routinely">Exit</Button>
     </WrapPanel>
 </src:DockWindow>
