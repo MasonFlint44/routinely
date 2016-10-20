@@ -20,10 +20,11 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 
-                                            Height="{TemplateBinding Height}" 
-                                            Width="{TemplateBinding Width}" 
-                                            BorderThickness="{TemplateBinding BorderThickness}" 
-                                            BorderBrush="{TemplateBinding BorderBrush}">
+                                    Height="{TemplateBinding Height}" 
+                                    Width="{TemplateBinding Width}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    CornerRadius="5">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                             <ControlTemplate.Triggers>
@@ -35,13 +36,44 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+
+            <Style x:Key="IndefiniteButton" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Width" Value="94"/>
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="BorderBrush" Value="DarkSlateGray"/>
+                <Setter Property="BorderThickness" Value="1,0,1,1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border 
+                                Background="{TemplateBinding Background}" 
+                                Height="{TemplateBinding Height}" 
+                                Width="{TemplateBinding Width}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Gray"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
         </ResourceDictionary>
     </UserControl.Resources>
     <Popup x:Name="Popup" Placement="Right" PopupAnimation="Scroll" AllowsTransparency="True" Focusable="True">
         <Border Background="SlateGray" BorderBrush="DarkSlateGray" BorderThickness="3" CornerRadius="5" Padding="5,3,5,3">
             <StackPanel x:Name="StackPanel" Orientation="Horizontal">
                 <TextBlock Foreground="White" VerticalAlignment="Center" Margin="0,0,5,0">How many cycles?</TextBlock>
-                <local:CounterBox x:Name="CounterBox"/>
+                <StackPanel Orientation="Vertical">
+                    <local:CounterBox x:Name="CounterBox"/>
+                    <Button Name="IndefiniteButton" Style="{StaticResource IndefiniteButton}">Indefinite</Button>
+                </StackPanel>
                 <Button 
                     x:Name="RunButton" 
                     Margin="5,0,0,0" 

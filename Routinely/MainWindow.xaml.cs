@@ -15,8 +15,8 @@ namespace Routinely
     public partial class MainWindow : DockWindow
     {
         private ScreenOverlay OverlayWindow;
-        private CycleCountPopup runPopup;
         private CancellationTokenSource cancelRoutineTask;
+        private CycleCountPopup runPopup;
 
         private bool isOverlayVisible
         {
@@ -144,6 +144,7 @@ namespace Routinely
         private void StopHotkeyHandler(object sender, HotkeyEventArgs e)
         {
             OverlayWindow.IsPaused = false;
+            runPopup.IsIndefinite = false;
             cancelRoutineTask.Cancel();
         }
 
@@ -231,7 +232,17 @@ namespace Routinely
             {
                 try
                 {
-                    OverlayWindow.RunRoutine(runPopup.CycleCount, cancelRoutineTask.Token);
+                    if(runPopup.IsIndefinite == true)
+                    {
+                        while (runPopup.IsIndefinite == true)
+                        {
+                            OverlayWindow.RunRoutine(runPopup.CycleCount, cancelRoutineTask.Token);
+                        }
+                    }
+                    else
+                    {
+                        OverlayWindow.RunRoutine(runPopup.CycleCount, cancelRoutineTask.Token);
+                    }
                 }
                 finally
                 {
