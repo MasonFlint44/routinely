@@ -67,8 +67,8 @@
         Orientation="Horizontal" 
         Width="94" 
         Height="25">
-        <RepeatButton Name="MinusButton" x:FieldModifier="public" BorderThickness="1,1,0,1" Click="MinusButton_Click" MouseEnter="Button_MouseEnter"  MouseLeave="Button_MouseLeave" Style="{StaticResource CounterButton}" ToolTip="Decrease delay value">-</RepeatButton>
+        <RepeatButton Name="MinusButton" x:FieldModifier="public" BorderThickness="1,1,0,1" Click="MinusButton_Click" MouseEnter="Button_MouseEnter"  MouseLeave="Button_MouseLeave" Style="{StaticResource CounterButton}" ToolTip="Decrease value">-</RepeatButton>
         <TextBox Name="CounterTextBox" x:FieldModifier="public" MouseEnter="TextBox_MouseEnter" MouseLeave="TextBox_MouseLeave" Style="{StaticResource CounterTextBox}"></TextBox>
-        <RepeatButton Name="PlusButton" x:FieldModifier="public" BorderThickness="0,1,1,1"  Click="PlusButton_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Style="{StaticResource CounterButton}" ToolTip="Increase delay value">+</RepeatButton>
+        <RepeatButton Name="PlusButton" x:FieldModifier="public" BorderThickness="0,1,1,1"  Click="PlusButton_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Style="{StaticResource CounterButton}" ToolTip="Increase value">+</RepeatButton>
     </StackPanel>
 </UserControl>

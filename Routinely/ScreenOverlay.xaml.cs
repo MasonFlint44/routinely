@@ -28,7 +28,7 @@ namespace Routinely
         private bool isDragPoint = false;
         private DragModel capturedDrag;
         private readonly Brush tinted = (Brush)new BrushConverter().ConvertFromString("#28FFFFFF");
-        private string defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Routinely";
+        private readonly string defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Routinely";
         private Window parent;
 
         public volatile bool IsPaused;

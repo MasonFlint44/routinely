@@ -8,18 +8,17 @@
         Background="Transparent"
         AnimationDuration="500"
         MouseLapseDuration="2000"
-        CollapsedWidth="10"
+        CollapsedWidth="2"
         Title="Routinely"
         ShowInTaskbar="False"
         AllowsTransparency="True">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Height" Value="30"/>
+            <Setter Property="Height" Value="25"/>
             <Setter Property="Width" Value="40"/>
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Background" Value="SlateGray"/>
-            <Setter Property="BorderBrush" Value="DarkSlateGray"/>
-            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -42,19 +41,23 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <WrapPanel x:Name="DockSettings" Orientation="{Binding Orientation}">
-        <Button x:Name="PinButton" Click="Pin_OnClick" IsEnabled="{Binding Permissions.CanPin}" ToolTip="Pin toolbar to screen">Pin</Button>
-        <Button x:Name="UnpinButton" Click="Unpin_OnClick" IsEnabled="{Binding Permissions.CanUnpin}" ToolTip="Unpin toolbar from scren">Unpin</Button>
-        <Button x:Name="ShowButton" Click="Show_OnClick" ToolTip="Display current routine">Show</Button>
-        <Button x:Name="HideButton" Click="Hide_OnClick" ToolTip="Hide current routine">Hide</Button>
-        <Button x:Name="AddClickButton" Click="AddClick_OnClick" ToolTip="Add Click to routine">Click</Button>
-        <Button x:Name="TextButton" Click="Text_OnClick" ToolTip="Add TextClick to routine">Text</Button>
-        <Button x:Name="DragButton" Click="Drag_OnClick" ToolTip="Add Drag to routine">Drag</Button>
-        <Button x:Name="SaveButton" Click="Save_OnClick" ToolTip="Save current routine">Save</Button>
-        <Button x:Name="LoadButton" Click="Load_OnClick" ToolTip="Load saved routine">Load</Button>
-        <Button x:Name="RunButton" Click="Run_OnClick" ToolTip="Run current routine (CTRL+ALT+X to stop)">Run</Button>
-        <Button x:Name="ResumeButton" Click="Resume_OnClick" FontSize="9" ToolTip="Resume current routine (CTRL+ALT+Z)">Resume</Button>
-        <Button x:Name="StopButton" Click="Stop_OnClick" ToolTip="Stop current routine (CTRL+ALT+X)">Stop</Button>
-        <Button x:Name="ExitButton" Click="Exit_OnClick" ToolTip="Exit Routinely">Exit</Button>
-    </WrapPanel>
+    <StackPanel>
+        <Border Background="DarkSlateGray" CornerRadius="5" Padding="1">
+            <WrapPanel x:Name="DockSettings" Orientation="{Binding Orientation}" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Button x:Name="PinButton" Click="Pin_OnClick" IsEnabled="{Binding Permissions.CanPin}" ToolTip="Pin toolbar to screen">Pin</Button>
+                <Button x:Name="UnpinButton" Click="Unpin_OnClick" IsEnabled="{Binding Permissions.CanUnpin}" ToolTip="Unpin toolbar from scren">Unpin</Button>
+                <Button x:Name="ShowButton" Click="Show_OnClick" ToolTip="Display current routine">Show</Button>
+                <Button x:Name="HideButton" Click="Hide_OnClick" ToolTip="Hide current routine">Hide</Button>
+                <Button x:Name="AddClickButton" Click="AddClick_OnClick" ToolTip="Add Click to routine">Click</Button>
+                <Button x:Name="TextButton" Click="Text_OnClick" ToolTip="Add TextClick to routine">Text</Button>
+                <Button x:Name="DragButton" Click="Drag_OnClick" ToolTip="Add Drag to routine">Drag</Button>
+                <Button x:Name="SaveButton" Click="Save_OnClick" ToolTip="Save current routine">Save</Button>
+                <Button x:Name="LoadButton" Click="Load_OnClick" ToolTip="Load saved routine">Load</Button>
+                <Button x:Name="RunButton" Click="Run_OnClick" ToolTip="Run current routine (CTRL+ALT+X to stop)">Run</Button>
+                <Button x:Name="ResumeButton" Click="Resume_OnClick" FontSize="9" ToolTip="Resume current routine (CTRL+ALT+Z)">Resume</Button>
+                <Button x:Name="StopButton" Click="Stop_OnClick" ToolTip="Stop current routine (CTRL+ALT+X)">Stop</Button>
+                <Button x:Name="ExitButton" Click="Exit_OnClick" ToolTip="Exit Routinely">Exit</Button>
+            </WrapPanel>
+        </Border>
+    </StackPanel>
 </src:DockWindow>

@@ -41,7 +41,7 @@
     <Grid Width="94" Height="75" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="Set delay after this click occurs">
         <StackPanel>
             <Label HorizontalContentAlignment="Center" Foreground="White" Background="Transparent">Delay</Label>
-            <local:CounterBox x:Name="CounterBox"/>
+            <local:CounterBox x:Name="CounterBox" ToolTip="Set delay value in milliseconds"/>
             <Button Name="IndefiniteButton" Style="{StaticResource DelayIndefiniteButton}" ToolTip="Wait indefinitely until resumed" Click="IndefiniteButton_Click">Indefinite</Button>
         </StackPanel>
     </Grid>

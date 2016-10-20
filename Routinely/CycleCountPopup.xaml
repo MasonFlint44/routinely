@@ -71,14 +71,15 @@
             <StackPanel x:Name="StackPanel" Orientation="Horizontal">
                 <TextBlock Foreground="White" VerticalAlignment="Center" Margin="0,0,5,0">How many cycles?</TextBlock>
                 <StackPanel Orientation="Vertical">
-                    <local:CounterBox x:Name="CounterBox"/>
-                    <Button Name="IndefiniteButton" Style="{StaticResource IndefiniteButton}">Indefinite</Button>
+                    <local:CounterBox x:Name="CounterBox" ToolTip="Set number of cycles"/>
+                    <Button Name="IndefiniteButton" Style="{StaticResource IndefiniteButton}" ToolTip="Run indefinitely until stopped">Indefinite</Button>
                 </StackPanel>
                 <Button 
                     x:Name="RunButton" 
                     Margin="5,0,0,0" 
                     Style="{StaticResource PopupButton}"
-                    Click="Button_Click">
+                    Click="Button_Click"
+                    ToolTip="Run routine">
                     Run
                 </Button>
             </StackPanel>

@@ -20,6 +20,7 @@ namespace Routinely
         private bool _textBoxSelected;
 
         public Brush HighlightColor = Brushes.Gray;
+        public int IncrementValue = 1;
         
         public bool TextBoxSelected
         {
@@ -84,6 +85,16 @@ namespace Routinely
                     _counterValue = value;
                     CounterText = value.ToString();
                 }
+                else if(value < MinValue)
+                {
+                    _counterValue = MinValue;
+                    CounterText = MinValue.ToString();
+                }
+                else if(value > MaxValue)
+                {
+                    _counterValue = MaxValue;
+                    CounterText = MaxValue.ToString();
+                }
             }
         }
 
@@ -122,12 +133,12 @@ namespace Routinely
 
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            CounterValue--;
+            CounterValue -= IncrementValue;
         }
 
         private void PlusButton_Click(object sender, RoutedEventArgs e)
         {
-            CounterValue++;
+            CounterValue += IncrementValue;
         }
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
