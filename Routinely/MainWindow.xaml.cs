@@ -280,9 +280,9 @@ namespace Routinely
 
         private void Stop_OnClick(object sender, RoutedEventArgs e)
         {
-            cancelRoutineTask.Cancel();
             OverlayWindow.IsPaused = false;
-            OverlayWindow.Show();
+            runPopup.IsIndefinite = false;
+            cancelRoutineTask.Cancel();
         }
 
         private void Exit_OnClick(object sender, RoutedEventArgs e)
